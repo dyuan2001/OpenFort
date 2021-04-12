@@ -9,6 +9,9 @@ def ocr_core(filename):
     This function will handle the core OCR processing of images.
     """
 
+    # Windows Only
+    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
     # Change image
     image = cv2.imread(filename)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -27,8 +30,10 @@ def ocr_core(filename):
     value["invertenhancetext"] = invertenhancetext
     return value
 
-value = ocr_core("images/tft25.png")
-print("invert enhance: " + value["invertenhancetext"])
+# value = ocr_core("images/tft25.png")
+# print("invert enhance: " + value["invertenhancetext"])
 window = gw.getActiveWindow() # might work better on Windows
 print(window)
 print(type(window))
+print(window.title)
+print(type(window.topleft))
