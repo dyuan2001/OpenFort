@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "mach_init.h": "c",
+        "sysctl.h": "c",
+        "mach_vm.h": "c",
+        "string.h": "c"
+    }
+}
